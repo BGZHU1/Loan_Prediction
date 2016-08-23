@@ -2,6 +2,7 @@
 Using machine learning technic to predict the rate of loan payback
 
 Data_clean:
+
 cleaned the columns had data leakage issue, redundant info ,missing value,null value
 
 converted text varaibles to categorical variables, then to dummy variables
