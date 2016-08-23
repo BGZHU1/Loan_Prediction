@@ -11,7 +11,7 @@ exported the clean dataset as filtered_data
 
 
 
-Predict the rate of loan payback: 
+Prediction:
 
 developed error matrix
 
