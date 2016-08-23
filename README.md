@@ -10,6 +10,7 @@ converted text varaibles to categorical variables, then to dummy variables
 exported the clean dataset as filtered_data
 
 
+
 Predict the rate of loan payback: 
 
 developed error matrix
@@ -19,7 +20,8 @@ applied cross validation in logistic regression to predict the loan pay-back rat
 improved the classifer by maunally imposing the panelty for wrong classifcation
 
 
-result:
+
+Result:
 
 tpr=0.6712295651648384
 
