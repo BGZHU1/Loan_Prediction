@@ -52,6 +52,7 @@ fpr=fp/(fp+tn) #probability of falsely reject the null hyoothesis (type I)
 #print(tpr)
 #print(fpr)
 
+
 #remove target column
 
 features=filtered_loans.drop("loan_status",axis=1)
@@ -59,8 +60,8 @@ features=filtered_loans.drop("loan_status",axis=1)
 target=filtered_loans["loan_status"]
 
 #use fit mehthod
-lr.fit(features,target)
-predictions=lr.predict(features)
+#lr.fit(features,target)
+#predictions=lr.predict(features)
 
 #use cross validation to generate predictions
 
@@ -72,9 +73,7 @@ predictions = cross_val_predict(lr, features, target, cv=kf)
 #-if does not do this,FPR and TPR won't work
 predictions = pd.Series(predictions)
 
-
-# Predict that all loans will be paid off on time- fill in predictions array with all ones
-predictions = pd.Series(numpy.ones(filtered_loans.shape[0]))
+#evaluate the classifer
 
 #find number of true negative
 tn_filter=(predictions==0)&(filtered_loans['loan_status']==0)
@@ -100,6 +99,17 @@ tpr = tp / (tp + fn)
 fpr = fp / (fp + tn)
 
 print(tpr)
+print(fpr)
+
+
+
+
+
+
+
+
+
+
 print(fpr)
 
 
