@@ -17,40 +17,9 @@ filtered_loans=filtered_loans.drop("pymnt_plan",axis=1)
 penalty={ 0:10, 1:1}
 lr = LogisticRegression(class_weight=penalty)
 
-#error metric - loan_status is 0s and 1s
-
-
-# Predict that all loans will be paid off on time- fill in predictions array with all ones
-predictions = pd.Series(numpy.ones(filtered_loans.shape[0]))
-
-#find number of true negative
-tn_filter=(predictions==0)&(filtered_loans['loan_status']==0)
-tn = len(predictions[tn_filter])
-
-
-#find number of true positive
-tp_filter=(predictions==1)&(filtered_loans['loan_status']==1)
-tp = len(predictions[tp_filter])
-
-
-#find number of false positive
-fp_filter=(predictions==1)&(filtered_loans['loan_status']==0)
-fp = len(predictions[fp_filter])
-
-
-#4.find number of false negative
-fn_filter=(predictions==0)&(filtered_loans['loan_status']==1)
-fn = len(predictions[fn_filter])
-
 #to reduce class imbalance
 #conservative assumption: focus more on false positive than false negative
 #optimize for high recall(TP) and low fall-out(FP)
-
-#metrix:using tpr and fpr
-tpr=tp/(tp+fn) #correctly identify the true number
-fpr=fp/(fp+tn) #probability of falsely reject the null hyoothesis (type I)
-#print(tpr)
-#print(fpr)
 
 
 #remove target column
@@ -74,7 +43,7 @@ predictions = cross_val_predict(lr, features, target, cv=kf)
 predictions = pd.Series(predictions)
 
 #evaluate the classifer
-
+#error matrix
 #find number of true negative
 tn_filter=(predictions==0)&(filtered_loans['loan_status']==0)
 tn = len(predictions[tn_filter])
