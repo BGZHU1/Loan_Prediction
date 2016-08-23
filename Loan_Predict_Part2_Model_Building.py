@@ -110,7 +110,6 @@ print(fpr)
 
 
 
-print(fpr)
 
 
 
