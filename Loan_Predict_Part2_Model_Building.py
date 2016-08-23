@@ -101,21 +101,3 @@ fpr = fp / (fp + tn)
 print(tpr)
 print(fpr)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
