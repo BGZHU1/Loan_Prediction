@@ -1,5 +1,5 @@
-#clean the columns had data leakage issue, redundant info ,missing value,null value
-#covert text varaibles to categorical variables, then to dummy variables
+#cleaned the columns had data leakage issue, redundant info ,missing value,null value
+#converted text varaibles to categorical variables, then to dummy variables
 
 import pandas as pd
 import os
